@@ -1,10 +1,15 @@
-
+{
 	"name": "jsmn",
+	"age": 20,
 	"keywords": "json",
 	"description": "Minimalistic JSON parser/tokenizer in C. It can be easily integrated into resource-limited or embedded projects",
 	"repository":
 	{
-		"type": "git",
+		"type": 
+		{
+			"a": "git",
+			"b": "tig"
+		},
 		"url": "https://github.com/zserge/jsmn.git"
 	},
 	"frameworks": "*",
