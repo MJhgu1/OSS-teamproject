@@ -64,6 +64,8 @@ int main(){
     //type!!
     
     object_f(data, length);
+    
+    
     printf("%d\n",length);
     
     for( int i = 0; i < 30; i++){
@@ -71,8 +73,8 @@ int main(){
         for(int k = token[i].start ; k<token[i].end; k++){
             printf("%c", data[k]);
         }
-        
-        printf(" ( %d ~ %d )\n",token[i].start, token[i].end);
+        printf(" (size: %d ",token[i].size);
+        printf("  %d ~ %d )\n",token[i].start, token[i].end);
     }
     
     printf("\n");
@@ -80,7 +82,6 @@ int main(){
 
 
 
-//start, end
 int object_f(char data[], int count){
     /*
      new token t 생성
@@ -105,7 +106,11 @@ int object_f(char data[], int count){
      */
     
     int start_index = tok_index;
+    int s=0;//size
+    
     token[tok_index].start = j;
+    token[tok_index].size = s;
+    
     j++;
     tok_index++;
     while(data[j]!='}'){
@@ -115,9 +120,13 @@ int object_f(char data[], int count){
             object_f(data, j);
         else if(data[j]=='[')
             array_f(data);
+        else if(data[j]==','){
+            s++;
+        }
         j++;
     }
     
+    token[start_index].size = s+1;
     token[start_index].end = j+1;
     return 0;
 }
@@ -144,7 +153,11 @@ int array_f(char data[]){
      return
      */
     int start_index = tok_index;
+    int s=0;
     token[tok_index].start=j;
+    token[tok_index].size = s;
+    
+    
     j++;
     tok_index++;
     while(data[j]!=']'){
@@ -154,8 +167,13 @@ int array_f(char data[]){
             object_f(data, j);
         else if(data[j]=='[')
             array_f(data);
+        else if(data[j]==','){
+            s++;
+        }
         j++;
     }
+    
+    token[start_index].size = s+1;
     token[start_index].end = j+1;
     
     return 0;
@@ -177,6 +195,13 @@ int string_f(char data[]){
     while(data[j]!='"'){
         j++;
     }
+    
+    if(data[j+1]==':')
+        token[tok_index].size = 1;
+    else if(data[j+1]==',')
+        token[tok_index].size = 0;
+    
+    
     token[tok_index].end = j;
     tok_index++;
 
