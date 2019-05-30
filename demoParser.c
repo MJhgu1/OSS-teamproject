@@ -16,7 +16,8 @@ typedef enum{
     OBJECT = 1,
     ARRAY = 2,
     STRING = 3,
-    PRIMATIVE = 4
+    PRIMATIVE = 4,
+    NUMBER = 5
 }type_t;
 
 // 토큰 구조
@@ -81,6 +82,7 @@ int main(){
             case 2 : printf("ARRAY"); break;
             case 3 : printf("STRING"); break;
             case 4 : printf("PRIMATIVE"); break;
+            case 5 : printf("NUMBER"); break;
             default : printf("UNDEFINED"); break;
         }
         printf(" )\n");
@@ -130,6 +132,8 @@ int object_f(char data[], int count){
             object_f(data, j);
         else if(data[j]=='[')
             array_f(data);
+        else if(data[j]<58 && data[j]>47)
+            number_f(data);
         else if(data[j]==','){
             s++;
         }
@@ -178,6 +182,8 @@ int array_f(char data[]){
             object_f(data, j);
         else if(data[j]=='[')
             array_f(data);
+        else if(data[j]<58 && data[j]>47)
+            number_f(data);
         else if(data[j]==','){
             s++;
         }
@@ -217,6 +223,33 @@ int string_f(char data[]){
     token[tok_index].end = j;
     tok_index++;
 
+    
+    return 0;
+}
+
+int number_f(char data[]){
+    /*
+     token을 만들어서 token array에 넣음
+     type: string (정해놓음)
+     start, end: 민지가 쓴 함수 참고
+     if string 뒤에 ':'' 있으면:
+     size = 1
+     else size = 0
+     
+     return;
+     */
+    token[tok_index].type = NUMBER;
+    token[tok_index].start = j+1;
+    token[tok_index].size = 0;
+    j++;
+    while(data[j] != ','){
+        j++;
+    }
+
+    token[tok_index].end = j;
+    j--;
+    tok_index++;
+    
     
     return 0;
 }
