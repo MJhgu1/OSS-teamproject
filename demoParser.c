@@ -16,7 +16,6 @@ typedef enum{
     ARRAY = 2,
     STRING = 3,
     PRIMATIVE = 4,
-    NUMBER = 5
 }type_t;
 
 // 토큰 구조
@@ -35,11 +34,11 @@ tok_t token[30];
 int object_f(char data[], int count);
 int array_f(char data[]);
 int string_f(char data[]);
-int number_f(char data[]);
+int primative_f(char data[]);
 
-int main(){
+int main(int argc, char **argv){
     
-    FILE *fp=fopen("example.json", "r");
+    FILE *fp=fopen(argv[1], "r");
     int fileLength;
     fseek(fp,0,SEEK_END);
     fileLength=ftell(fp);
@@ -83,7 +82,6 @@ int main(){
             case 2 : printf("ARRAY"); break;
             case 3 : printf("STRING"); break;
             case 4 : printf("PRIMATIVE"); break;
-            case 5 : printf("NUMBER"); break;
             default : printf("UNDEFINED"); break;
         }
         printf(" )\n");
@@ -134,8 +132,8 @@ int object_f(char data[], int count){
             object_f(data, j);
         else if(data[j]=='[')
             array_f(data);
-        else if(47<data[j] && data[j]<58)
-            number_f(data);
+        else if((47<data[j] && data[j]<58) || data[j]==84 || data[j]==116 || data[j]==70 || data[j]==102)
+            primative_f(data);
         else if(data[j]==','){
             s++;
         }
@@ -184,8 +182,8 @@ int array_f(char data[]){
             object_f(data, j);
         else if(data[j]=='[')
             array_f(data);
-        else if(47<data[j] && data[j]<58)
-            number_f(data);
+        else if((47<data[j] && data[j]<58) || data[j]==84 || data[j]==116 || data[j]==70 || data[j]==102 )
+            primative_f(data);
         else if(data[j]==','){
             s++;
         }
@@ -229,7 +227,7 @@ int string_f(char data[]){
     return 0;
 }
 
-int number_f(char data[]){
+int primative_f(char data[]){
     /*
      token을 만들어서 token array에 넣음
      type: string (정해놓음)
@@ -240,7 +238,7 @@ int number_f(char data[]){
      
      return;
      */
-    token[tok_index].type = NUMBER;
+    token[tok_index].type = PRIMATIVE;
     token[tok_index].start = j;
     token[tok_index].size = 0;
     j++;
@@ -249,6 +247,7 @@ int number_f(char data[]){
     }
     
     token[tok_index].end = j;
+    j--;
     tok_index++;
     //if(token[tok_index].type == 3) printf("STRING");
     
