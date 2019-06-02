@@ -1,0 +1,16 @@
+{
+	"name": "jake",
+	"age": 26,
+	"address": "jake street 12-34",
+	"pressure": 140,
+	"pulse": 90,
+	"temperature": 36.5,
+	"admission": True,
+	{
+		"type": "patient",
+		"location": "A"
+	},
+	"etc": [
+		"etc"
+	]
+}
