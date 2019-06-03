@@ -13,6 +13,7 @@ this is oss team project group 9
     따라서 저희가 만든 파서 또한 유용할 것으로 예상됩니다.
     
 » How do I get started?
+
     제일 먼저 아이디와 비밀 번호를 입력합니다. (저희는 임의로 id: doctor, pw: 1234로 지정해 주었습니다.)
     이렇게 로그인하면 다섯 개의 메뉴가 있는 것을 볼 수 있습니다.
     1. Basic View: Result of Parsing
@@ -30,4 +31,5 @@ this is oss team project group 9
     5. Exit
     
 » Where can I get more help, if I need it?
+
     저희조는 token을 배열로 관리하였는데 동적메모리 할당을 사용하여 token을 관리하는 법을 배우고 싶습니다. 
