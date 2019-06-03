@@ -40,5 +40,20 @@
 		"admission": true,
 		"doctor": "Watson",
 		"medicine": ["Daxycycline", "Minocycline", "Vancomycin"]
+	},
+
+	"Jason":
+	{
+		"name": "Jason",
+		"age": 18,
+		"address": "Jason Street 42-11",
+		"systolic pressure": 120,
+		"Diastolic pressure": 86,
+		"pulse": 119,
+		"temperature": 36.5,
+		"admission": false,
+		"doctor": "Watson",
+		"medicine": ["Aspirin"]
 	}
+
 }
