@@ -445,7 +445,7 @@ int primative_f(char data[]){
     }
     
     token[tok_index].end = j;
-    j—;
+    j--;
     tok_index++;
     
     return 0;
