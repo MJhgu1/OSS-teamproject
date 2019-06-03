@@ -1,16 +1,44 @@
 {
-	"name": "jake",
-	"age": 26,
-	"address": "jake street 12-34",
-	"pressure": 140,
-	"pulse": 90,
-	"temperature": 36.5,
-	"admission": True,
+	"Jake": 
 	{
-		"type": "patient",
-		"location": "A"
+		"name": "Jake",
+		"age": 26,
+		"address": "jake street 12-34",
+		"systolic pressure": 144,
+		"Diastolic pressure": 110,
+		"pulse": 86,
+		"temperature": 36.5,
+		"admission": true,
+		"doctor": "Kevin",
+		"medicine": ["penicillin", "carbapenem", "Telavancin"]
+
 	},
-	"etc": [
-		"etc"
-	]
+
+	"Suzan":
+	{
+		"name": "Suzan",
+		"age": 35,
+		"address": "suzan street 33-62",
+		"systolic pressure": 118,
+		"Diastolic pressure": 81,
+		"pulse": 95,
+		"temperature": 36.5,
+		"admission": true,
+		"doctor": "Kevin",
+		"medicine": ["cephalexin", "Tetracycline"]
+	},
+
+	"Sherlock":
+	{
+		"name": "Sherlock",
+		"age": 32,
+		"address": "221B Baker Street",
+		"systolic pressure": 98,
+		"Diastolic pressure": 79,
+		"pulse": 88,
+		"temperature": 36.1,
+		"admission": true,
+		"doctor": "Watson",
+		"medicine": ["Daxycycline", "Minocycline", "Vancomycin"]
+	}
 }
