@@ -97,7 +97,8 @@ int main(int argc, char **argv)
                     printf("2. A list of Patients\n");
                     printf("3. My Patients\n");
                     printf("4. Patient Who Needs Care\n");
-                    printf("5. Exit\n");
+                    printf("5. Medicine for the Patients\n");
+                    printf("6. Exit\n");
                     printf("************************************\n");
 
                     printf("Please select the number of information you want to see : ");
@@ -217,6 +218,34 @@ int main(int argc, char **argv)
                     
                     }
                     else if(num==5){
+                        printf("\n***** Medicine for the Patients *****\n");
+                        object_f(data, length);
+                        
+
+                        for(int i=0; i<tok_index; i++){
+                            if(strcmp(token[i].key, "medicine")==0){
+                                
+                                printf("-");
+                                for(int k = token[i-17].start; k<token[i-17].end; k++){
+                                        printf("%c", data[k]);
+                                }
+                                printf(": ");
+
+                                for(int t=0; t<token[i+1].size; t++){
+                                    for(int k = token[i+2+t].start; k<token[i+2+t].end; k++){
+                                        printf("%c", data[k]);
+                                    }
+                                    printf(" ");
+                                    
+                                }
+
+                                
+                                printf("\n");
+                            }
+                        }
+
+                    }
+                    else if(num==6){
                         flag2=0;
                         printf("The program has been terminated.\n");
                     }
