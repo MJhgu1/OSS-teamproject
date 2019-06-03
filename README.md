@@ -17,18 +17,21 @@ this is oss team project group 9
     제일 먼저 아이디와 비밀 번호를 입력합니다. (저희는 임의로 id: doctor, pw: 1234로 지정해 주었습니다.)
     이렇게 로그인하면 다섯 개의 메뉴가 있는 것을 볼 수 있습니다.
     1. Basic View: Result of Parsing
-        -  json 파일을 파싱한 결과를 보여줍니다.
+        -  이 메뉴를 선택시json 파일을 파싱한 결과를 보여줍니다.
         
     2. A list of Patients
-        -   json 파일에서 환자의 명단을 보여줍니다.
+        -  이 메뉴를 선택시 json 파일에서 환자의 명단을 보여줍니다.
         
     3. My Patients
-        -   의사의 name을 입력하면 해당 의사의 환자 명단을 보여줍니다.
+        -  이 메뉴를 선택시 의사의 name을 입력하면 해당 의사의 환자 명단을 보여줍니다.
         
     4. Patient Who Needs Care
-        -   환자들 중 혈압이 140 이상이거나 100이하인 환자들의 명단을 보여줍니다.
+        -  이 메뉴를 선택시 환자들 중 혈압이 140 이상이거나 100이하인 환자들의 명단을 보여줍니다.
+    
+    5. Medicine for the Patients
+        -  이 메뉴를 선택시 환자마다 복용해야하는 약물의 명단을 보여줍니다.
         
-    5. Exit
+    6. Exit
     
 » Where can I get more help, if I need it?
 
